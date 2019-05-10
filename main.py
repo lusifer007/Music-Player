@@ -178,8 +178,15 @@ def load_project():
     #     playlist_content.insert(index,x)
     #     playlist.insert(index,filename)
     #     index+=1
-def about_us():
-    webbrowser.open('https://stackoverflow.com/questions/4302027/how-to-open-a-url-in-python')
+def help():
+    webbrowser.open('https://github.com/lusifer007/Music-Player')
+def credit():
+    webbrowser.open('https://www.facebook.com/milan.hembram.31')
+    webbrowser.open('https://www.facebook.com/abhimanyu.das3')
+    webbrowser.open('https://www.facebook.com/mrinal.pahan.9')
+    webbrowser.open('https://www.facebook.com/waseemuddin.wani.3')
+def p():
+    pass
 #main menu
 topmenu = Menu(root)
 m1 = Menu(topmenu)
@@ -188,9 +195,12 @@ m1.add_command(label="Save",command=save_project)
 m1.add_command(label="Load Project",command=load_project)
 m1.add_cascade(label="Exit",command=exit)
 topmenu.add_cascade(label="File",menu=m1)
+m3 = Menu(topmenu)
+m3.add_command(label="Developers",command=credit)
+topmenu.add_cascade(label="About US",menu=m3)
 m2 = Menu(topmenu)
-m2.add_command(label="About Us",command=about_us)
-topmenu.add_cascade(label="About Us",menu=m2)
+m2.add_command(label="Help",command=help)
+topmenu.add_cascade(label="Get Help",menu=m2)
 root.config(menu=topmenu)
 #Last Status Bar
 status_end = Label(root,text="MilanExpo Copyright",bg="#ed662c",fg="white")
