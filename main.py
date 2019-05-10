@@ -60,6 +60,7 @@ def play():
             play_it = playlist[selected_song]
             mixer.music.load(play_it)
             mixer.music.play()
+            show_details()
             tag = TinyTag.get(play_it.name)
             title['text']= "Title : "+tag.title
             album['text'] =" Album : "+tag.album
@@ -67,11 +68,10 @@ def play():
             year['text'] = "year : "+tag.year
             composer['text'] = "Composer : "+tag.composer
             genre['text'] = "Genre : "+tag.genre
-            show_details()
             # byt_image_converter(play_it)
             #statusbar2['text'] = "Playing Music "+ " "+os.path.basename(filename.name)
         except:
-            tmsg.showinfo("Error","There are some problem importing Sound Clip")
+            tmsg.showinfo("Error","There are some problem Extracting Music MetaData or Music Track is Not selected")
 
         #statusbar2['text'] = "Music Resumed"
 def show_details():
@@ -159,7 +159,7 @@ def save_project():
     with open('data_file.txt', 'w') as filehandle:
         for listitem in playlist:
             filehandle.write('%s\n' % listitem)
-    tmsg.showinfo("Check in the root folder for all data")
+    tmsg.showinfo("Done","Check in the root folder for all data")
 def load_project():
     tmsg.showinfo("We are very sorrry","This function is not Developed properly , follow the source code .you can contribute to the project")
     # places = []
@@ -211,7 +211,7 @@ f1_width = width *0.03
 f1_width = int(f1_width)
 l_height = height * 0.05
 l_height = int(l_height)
-f1 = Frame(root,bg="#42f4e8",width=f1_width)
+f1 = Frame(root,bg="#d62675",width=f1_width)
 l1 = Label(f1,text="Playlist",font="Arial 25",bg="black",fg="white")
 l1.pack(fill=X)
 playlist_content = Listbox(f1,height=l_height,width=f1_width,bg="#d62675",fg="white")
