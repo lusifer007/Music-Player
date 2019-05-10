@@ -188,6 +188,10 @@ def credit():
     webbrowser.open('https://www.facebook.com/UstadExpo/photos/a.2155736404503329/2351314314945536/?type=3&theater')
 def p():
     pass
+def youtube():
+    webbrowser.open('https://www.youtube.com/channel%2FUC7lsTjd9As4HaSq7XjFC7aw?fbclid=IwAR1LdIsSXntNw5ggDhozHFrcoVkCDu8fp6S2Qwffxv0HPBPJBFm6Yg1543w')
+    webbrowser.open('https://www.youtube.com/milanexpox')
+
 #main menu
 topmenu = Menu(root)
 m1 = Menu(topmenu)
@@ -202,6 +206,10 @@ topmenu.add_cascade(label="About US",menu=m3)
 m2 = Menu(topmenu)
 m2.add_command(label="Help",command=help)
 topmenu.add_cascade(label="Get Help",menu=m2)
+
+m4 = Menu(topmenu)
+m4.add_command(label="YouTube",command=youtube)
+topmenu.add_cascade(label="Subscribe US on YouTube",menu=m4)
 root.config(menu=topmenu)
 #Last Status Bar
 status_end = Label(root,text="MilanExpo Copyright",bg="#ed662c",fg="white")
