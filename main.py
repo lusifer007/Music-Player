@@ -23,7 +23,7 @@ width = width
 #set Screen according to width and height
 root.geometry(f"{width}x{height}")
 root.wm_iconbitmap("icon.ico")
-root.title("MilanExpo Music Player")
+root.title("XYZ Music Player")
 #functions
 
 playlist = []
@@ -185,6 +185,7 @@ def credit():
     webbrowser.open('https://www.facebook.com/abhimanyu.das3')
     webbrowser.open('https://www.facebook.com/mrinal.pahan.9')
     webbrowser.open('https://www.facebook.com/waseemuddin.wani.3')
+    webbrowser.open('https://www.facebook.com/UstadExpo/photos/a.2155736404503329/2351314314945536/?type=3&theater')
 def p():
     pass
 #main menu
@@ -211,9 +212,9 @@ f1_width = int(f1_width)
 l_height = height * 0.05
 l_height = int(l_height)
 f1 = Frame(root,bg="#42f4e8",width=f1_width)
-l1 = Label(f1,text="Playlist",font="Arial 25",bg="#f49541")
+l1 = Label(f1,text="Playlist",font="Arial 25",bg="black",fg="white")
 l1.pack(fill=X)
-playlist_content = Listbox(f1,height=l_height,width=f1_width)
+playlist_content = Listbox(f1,height=l_height,width=f1_width,bg="#d62675",fg="white")
 playlist_content.pack()
 add_btn = Button(f1,text="+Add",command=file_browser)
 add_btn.pack(side=LEFT)
@@ -223,15 +224,15 @@ f1.pack(side=LEFT,fill=Y)
 
 
 #Frame 2
-f2 = Frame(root,bg="#dc41f4")
-song_name = Label(f2,text="Beta Version 1.0",height=2,font="airstrike 20",bg="#dc41f4",fg="white")
+f2 = Frame(root,bg="black")
+song_name = Label(f2,text="Beta Version 1.0",height=2,font="airstrike 20 bold",bg="black",fg="white")
 song_name.pack()
 f2.pack(side=TOP,fill=X)
 
 #frame 3
-f3 = Frame(root,bg="#41c7f4")
+f3 = Frame(root,bg="white")
 song_status_bar = Scale(f3,from_=0,to=100,orient=HORIZONTAL,command=file_browser,
-                          length=600,bg="green",fg="white",highlightbackground="white",)
+                          length=600,bg="#28d626",fg="white",highlightbackground="white",)
 song_status_bar.pack(side=BOTTOM,)
 sample_photo = PhotoImage(file="sample.png")
 l_test = Label(f3,image=sample_photo,bg="#41c7f4")
